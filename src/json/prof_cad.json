@@ -1,0 +1,14 @@
+[
+    {
+        "nome": "Maria de Fatíma Cardoso",
+        "email": "maria@gmail.com",
+        "senha": "12345678",
+        "Diciplina": "Portugues"
+    },
+    {
+        "nome": "José da Silva",
+        "email": "jose@gmail.com",
+        "senha": "12345678",
+        "Diciplina": "História"
+    }
+]

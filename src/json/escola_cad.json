@@ -1,0 +1,18 @@
+[
+    {
+        "nome": "Escola Municipal Brasil",
+        "email": "brasil@gmail.com",
+        "senha": "12345678",
+        "logradouro": "Rua A",
+        "numero": "2020",
+        "complemento": "Ed 202",
+        "bairro": "Centro",
+        "cidade": "Rio de Janeiro",
+        "estado": "Rio de Janeiro",
+        "cep": "20240135",
+        "telefone": "2222-0000",
+        "telefone2": "3333-1111",
+        "publica": "Sim"
+
+    }
+]

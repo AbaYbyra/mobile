@@ -26,7 +26,7 @@ export default function Sobre() {
            />
            </View>
 
-           <View style={styles.box}>
+           <View style={styles.sobre}>
              <Text style={styles.titulo_sobre}>Abá Ybyrá</Text>
               <Text style={styles.texto_sobre}>
                 O projeto, ABÁ YBYRÁ, foi montado em cima do problema que é a forma que é descartado os lixos, gerando consequências graves 
@@ -67,7 +67,7 @@ export default function Sobre() {
 
 const styles = StyleSheet.create({
     header:{
-       marginTop: 31,
+       marginTop: 0,
         backgroundColor: '#45CA42',
         flexDirection: 'row',
         alignItems: 'center',
@@ -96,5 +96,15 @@ const styles = StyleSheet.create({
       backgroundColor: '#ddd',
       margin: 7,
       borderRadius: 5,
+    },
+    sobre:{
+      marginRight: 10,
+      marginLeft: 10, 
+      marginBottom: 100,
+    },
+    titulo_sobre:{
+      marginLeft: 135,
+      fontSize: 25,
+      color:'#45ca42',
     }
 })    

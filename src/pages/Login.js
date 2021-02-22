@@ -1,16 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React, { useState } from 'react';
-import { StyleSheet, SafeAreaView, TouchableOpacity, Text, View, Image, TextInput, Button, Alert } from 'react-native';
+import { StyleSheet, SafeAreaView, TouchableOpacity, Text, View, Image, TextInput, } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+
+import Cadastro from '../Cadastro/index';
+
 
 const Separator = () => (
   <View style={styles.separator} />
 );
 
-export default function Login() {
+export default function Login({ navigation }){
+   
 
   return (
+    
     <SafeAreaView style={styles.container}>  
-
+  
       <Text style={styles.texto}>Login</Text>
       
       <Separator />
@@ -33,7 +40,8 @@ export default function Login() {
        </View> 
 
        <View style={styles.butCad}>
-         <TouchableOpacity style={styles.button2}>
+         <TouchableOpacity style={styles.button2}
+         onPress={() => navigation.navigate('Cadastro_login')}>
            <Text style={styles.text}>Cadastrar</Text>
          </TouchableOpacity>
        </View>

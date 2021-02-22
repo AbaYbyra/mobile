@@ -1,25 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView,ScrollView, TextInput, Alert, Button } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView,ScrollView, TextInput, Alert, TouchableOpacity } from 'react-native';
 
 const Separator = () => (
   <View style={styles.separator} />
 );
 
-export default function App() {
-
-const [nome, setNome] = useState('');
-const [email, setEmail] = useState('');
-const [senha, setSenha] = useState('');
-const [disciplina, setDisciplina] = useState('');
-
-
-const cadastro = () => {
-  Alert(nome);
-  Alert(email);
-  Alert(senha);
-  Alert(disciplina);
-};
+export default function cad_prof({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
@@ -35,25 +22,37 @@ const cadastro = () => {
       <ScrollView style={styles.scrollView}>
 
        <TextInput style={styles.input}
-       placeholder="Nome da escola" onChangeText={text => setNome(text)}/>
+       placeholder="Nome"/>
        
        <TextInput style={styles.input}
-       placeholder="E-mail" onChangeText={text => setEmail(text)}/>
+       placeholder="E-mail" />
 
        <TextInput style={styles.input}
-       placeholder="Senha" onChangeText={text => setSenha(text)}
+       placeholder="Identificação da escola" />
+
+       <TextInput style={styles.input}
+       placeholder="Senha"
        secureTextEntry={true}/>
 
        <TextInput style={styles.input}
-       placeholder="Disciplena" onChangeText={text => setDisciplina(text)}/>
+       placeholder="Confirmar senha"
+       secureTextEntry={true} />
 
-       <View style={styles.fixToText}>
-         <Button
-           borderRadius= "100"
-           color="#5F9EA0"
-           title="Cadastrar"
-           onPress={() => cadastro}
-         />
+    <View style={styles.fixToText}>
+      
+       <View style={styles.butLog}>
+          <TouchableOpacity style={styles.button1}
+           onPress={() => Alert.alert('MSG', 'Usuário Cadastrado!')}>
+           <Text style={styles.text}>Cadastrar</Text>
+          </TouchableOpacity>
+       </View> 
+
+       <View style={styles.butCad}>
+         <TouchableOpacity style={styles.button2}
+          onPress={() => navigation.navigate('Login')}>
+           <Text style={styles.text}>Login</Text>
+         </TouchableOpacity>
+       </View>
       </View>
       </ScrollView>
     </SafeAreaView>
@@ -103,6 +102,29 @@ const styles = StyleSheet.create({
     marginTop: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
-  }
+    marginLeft:5,
+  },
+  butLog: {
+   marginRight: 150,
+  },
+  button1: {
+    width: 100,
+    height: 40,
+    backgroundColor: "#9ad8ff",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 5,
+    marginVertical: 15,
+  },
+  button2: {
+    width: 100,
+    height: 40,
+    backgroundColor: "#45CA42",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 5,
+    marginVertical: 15,
+  },
 });
+
 

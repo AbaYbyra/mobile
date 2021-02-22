@@ -6,7 +6,7 @@ const Separator = () => (
   <View style={styles.separator} />
 );
 
-export default function Login() {
+export default function Contato() {
 
   return (
     <View style={styles.container}>
@@ -31,7 +31,8 @@ export default function Login() {
        placeholder="Mensagem"
          multiline={true}
        />
-         <TouchableOpacity style={styles.button}>
+         <TouchableOpacity style={styles.button}
+         onPress={() => Alert.alert('MSG', 'Mensagem enviada!')}>
            <Text style={styles.text}>Enviar</Text>
          </TouchableOpacity>
   

@@ -1,21 +1,26 @@
 import React, { useState } from 'react';
-import { StyleSheet, SafeAreaView, TouchableOpacity, Text, View, Image, TextInput, Button, Alert } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, View, Image} from 'react-native';
+
 
 const Separator = () => (
     <View style={styles.separator} />
   );  
   
-export default function Cadastro() {
+export default function Cadastro({ navigation }) {
+
 
     return (
       <View style={styles.container}>
          
   
-        <TouchableOpacity style={styles.button1}>
+        <TouchableOpacity style={styles.button1}
+        onPress={() => navigation.navigate('Cadastre-se')}
+        >
            <Text style={styles.text}>Sou Professor</Text>
         </TouchableOpacity>
         <Separator />
-        <TouchableOpacity style={styles.button2}>
+        <TouchableOpacity style={styles.button2}
+        onPress={() => navigation.navigate('Cadastre')}>
            <Text style={styles.text}>Sou Escola</Text>
         </TouchableOpacity>
     

@@ -1,42 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, ScrollView, TextInput, Alert, Button } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TextInput, Alert, TouchableOpacity  } from 'react-native';
 
 const Separator = () => (
   <View style={styles.separator} />
 );
 
-export default function App() {
+export default function cad_escola({ navigation }) {
 
-const [nome, setNome] = useState('');
-const [email, setEmail] = useState('');
-const [senha, setSenha] = useState('');
-const [logadouro, setLogadouro] = useState('');
-const [numero, setNumero] = useState('');
-const [complemento, setComplemento] = useState('');
-const [bairro, setBairro] = useState('');
-const [cidade, setCidade] = useState('');
-const [estado, setEstado] = useState('');
-const [cep, setCep] = useState('');
-const [telefone, setTelefone] = useState('');
-const [telefone2, setTelefone2] = useState('');
-
-const cadastro = () => {
-  Alert(nome);
-  Alert(email);
-  Alert(senha);
-  Alert(logadouro);
-  Alert(numero);
-  Alert(complemento);
-  Alert(bairro);
-  Alert(cidade);
-  Alert(estado);
-  Alert(cep);
-  Alert(telefone);
-  Alert(telefone2);
-};
-
-  return (
+   return (
     <View style={styles.container}>
       <StatusBar hidden/>  
 
@@ -50,48 +22,63 @@ const cadastro = () => {
       <ScrollView style={styles.scrollView}>
 
        <TextInput style={styles.input}
-       placeholder="Nome da escola" onChangeText={text => setNome(text)}/>
+       placeholder="Nome da escola" />
        
        <TextInput style={styles.input}
-       placeholder="E-mail" onChangeText={text => setEmail(text)}/>
+       placeholder="E-mail"/>
 
        <TextInput style={styles.input}
-       placeholder="Senha" onChangeText={text => setSenha(text)}
+       placeholder="Senha"
        secureTextEntry={true}/>
 
        <TextInput style={styles.input}
-       placeholder="Logadouro" onChangeText={text => setLogadouro(text)}/>
+       placeholder="Logadouro" />
 
        <TextInput style={styles.input}
-       placeholder="Número" onChangeText={text => setNumero(text)}/>
+       placeholder="Número" />
 
        <TextInput style={styles.input}
-       placeholder="Complemento" onChangeText={text => setComplemento(text)}/>
+       placeholder="Complemento" />
 
        <TextInput style={styles.input}
-       placeholder="Bairro" onChangeText={text => setBairro(text)}/>
+       placeholder="Bairro" />
 
        <TextInput style={styles.input}
-       placeholder="Cidade" onChangeText={text => setCidade(text)}/>
+       placeholder="Cidade" />
 
        <TextInput style={styles.input}
-       placeholder="Estado" onChangeText={text => setEstado(text)}/>
+       placeholder="UF"/>
 
        <TextInput style={styles.input}
-       placeholder="CEP" onChangeText={text => setCep(text)}/>
+       placeholder="CEP"/>
 
        <TextInput style={styles.input}
-       placeholder="Telefone" onChangeText={text => setTelefone(text)}/>
+       placeholder="Telefone" />
 
        <TextInput style={styles.input}
-       placeholder="Telefone 2" onChangeText={text => setTelefone2(text)}/>
- 
+       placeholder="Telefone auxiliar"/>
+
+       <TextInput style={styles.input}
+       placeholder="Publica?"/>
+     </ScrollView>
        
-       <Button style={styles.but}
-         title="Cadastrar"
-         onPress={() => cadastro}
-      />
-      </ScrollView>
+     <View style={styles.fixToText}>
+      
+      <View style={styles.butLog}>
+         <TouchableOpacity style={styles.button1}
+          onPress={() => Alert.alert('MSG', 'Usuário Cadastrado!')}>
+          <Text style={styles.text}>Cadastrar</Text>
+         </TouchableOpacity>
+      </View> 
+
+      <View style={styles.butCad}>
+        <TouchableOpacity style={styles.button2}
+        onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.text}>Login</Text>
+        </TouchableOpacity>
+      </View>
+     </View>
+    
     </View>
 
   );
@@ -133,5 +120,30 @@ const styles = StyleSheet.create({
   scrollView: {
     marginHorizontal: 20,
     marginTop:150
+  },
+  fixToText: {
+    marginTop: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginLeft:5,
+  },
+  button1: {
+    width: 100,
+    height: 40,
+    backgroundColor: "#9ad8ff",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 5,
+    marginVertical: 15,
+    marginRight:150
+  },
+  button2: {
+    width: 100,
+    height: 40,
+    backgroundColor: "#45CA42",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 5,
+    marginVertical: 15,
   },
 });

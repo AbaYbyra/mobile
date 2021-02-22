@@ -5,7 +5,7 @@ const Separator = () => (
   <View style={styles.separator} />
 );
 
-export default function Configuração() {
+export default function Configuração({ navigation }) {
     return(
         <SafeAreaView>
             <View style={styles.header}>
@@ -34,7 +34,7 @@ export default function Configuração() {
 
 const styles = StyleSheet.create({
     header:{
-       marginTop: 30,
+       marginTop: 0,
         backgroundColor: '#45CA42',
         flexDirection: 'row',
         alignItems: 'center',

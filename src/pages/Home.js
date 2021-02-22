@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, ScrollView, SafeAreaView, StyleSheet, View, Image} from 'react-native';
+import { Text, ScrollView, SafeAreaView, StyleSheet, View, Image, Button} from 'react-native';
 
 const Separator = () => (
   <View style={styles.separator} />
@@ -24,7 +24,7 @@ export default function Home() {
            source={require('../../assets/cover1.jpg')}
            style={{width: 400, height:260}}
            />
-           
+          
          </View>
 
          </ScrollView>
@@ -35,7 +35,7 @@ export default function Home() {
 
 const styles = StyleSheet.create({
     header:{
-       marginTop: 31,
+       marginTop: 0,
         backgroundColor: '#45CA42',
         flexDirection: 'row',
         alignItems: 'center',
